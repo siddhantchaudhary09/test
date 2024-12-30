@@ -59,45 +59,61 @@ export default function Home() {
   return (
     <div className="py-4 mx-auto container">
       <div className="mx-auto relative h-80">
-        <Image src={hero} alt="hero" className="w-full h-64 rounded-lg" />
+        <div className="px-8 mx-auto relative h-64">
+          {" "}
+          <Image
+            src={hero}
+            alt="hero"
+            className="w-full h-64 rounded-lg mx-2"
+          />
+        </div>
 
-        <Card className=" absolute bottom-1 left-44 mx-auto">
+        <Card className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <CardContent className="p-3">
-            <div className="flex items-center justify-center gap-3">
-              <div className="flex-1">
+            <div className="flex flex-row items-center gap-3">
+              <div className="w-full sm:flex-1">
                 <Input type="text" placeholder="Location" className="w-full" />
-                <div className="text-xs text-muted-foreground mt-1">Where</div>
+                <div className="text-xs text-muted-foreground mt-1 text-center sm:text-left">
+                  Where
+                </div>
               </div>
 
-              <div className="flex-1">
+              <div className="w-full sm:flex-1 hidden sm:block">
                 <Input
                   type="text"
                   placeholder="Add Radius"
                   className="w-full"
                 />
-                <div className="text-xs text-muted-foreground mt-1">Radius</div>
+                <div className="text-xs text-muted-foreground mt-1 text-center sm:text-left">
+                  Radius
+                </div>
               </div>
 
-              <div className="flex-1">
+              <div className="w-full sm:flex-1 hidden sm:block">
                 <Input type="date" placeholder="Add date" className="w-full" />
-                <div className="text-xs text-muted-foreground mt-1">Date</div>
+                <div className="text-xs text-muted-foreground mt-1 text-center sm:text-left">
+                  Date
+                </div>
               </div>
 
-              <div className="flex-1">
+              <div className="w-full sm:flex-1 hidden sm:block">
                 <Input
                   type="number"
                   placeholder="Number of hours"
                   className="w-full"
                 />
-                <div className="text-xs text-muted-foreground mt-1">Hours</div>
+                <div className="text-xs text-muted-foreground mt-1 text-center sm:text-left">
+                  Hours
+                </div>
               </div>
-
-              <Button
-                size="icon"
-                className="h-10 w-10 bg-blue-500 hover:bg-blue-600"
-              >
-                <Search className="h-4 w-4" />
-              </Button>
+              <div>
+                <Button
+                  size="icon"
+                  className="h-10 w-10 bg-blue-500 hover:bg-blue-600 sm:ml-3 mt-2 sm:mt-0"
+                >
+                  <Search className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -105,7 +121,7 @@ export default function Home() {
 
       {/* ///section2  */}
 
-      <div className="mx-auto mt-6">
+      <div className="mx-auto mt-6 px-2">
         <h2 className="text-lg ">Recent</h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mx-auto px-6 mt-4">
           {data.map((room, index) => (

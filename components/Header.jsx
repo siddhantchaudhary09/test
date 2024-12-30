@@ -5,7 +5,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header className="bg-white shadow-md">
-      <div className="container mx-auto flex items-center justify-between py-4 ">
+      <div className="container mx-auto flex items-center justify-between py-4 px-2 sm:px-0">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold text-black hover:underline">
           Music Room.
