@@ -56,74 +56,116 @@ export default function Home() {
       imageAlt: "Contemporary room with clean lines and subtle decoration",
     },
   ];
-
   return (
-    <div className="py-4 mx-auto container px-4">
-      <div className="relative h-80 bg-gray-50">
+    <div className="py-4 mx-auto container">
+      <div className="mx-auto relative h-80 bg-gray-50">
         {/* Hero Image */}
-        <div className="h-64 w-full overflow-hidden rounded-lg shadow-md">
-          <Image src={hero} alt="hero" className="w-full h-full object-cover" />
+        <div className="px-8 mx-auto relative h-64">
+          <Image
+            src={hero}
+            alt="hero"
+            className="w-full h-64 rounded-lg object-cover shadow-md"
+          />
         </div>
-        {/* Hero Text */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-40 text-center text-white p-4">
-          <h2 className="text-2xl sm:text-4xl font-extrabold mb-2 drop-shadow-lg">
-            Search for a Room
-          </h2>
-          <h3 className="text-sm sm:text-lg font-semibold drop-shadow-md">
-            Rehearsal Room | Music Session | Multifloor Session
-          </h3>
+        <div className="absolute top-1/3 sm:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+          {/* Background Overlay for Text */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+
+          {/* Text */}
+          <div className="relative z-10">
+            <h2 className="text-md sm:text-5xl font-extrabold sm:mb-3 drop-shadow-lg">
+              Search for a Room
+            </h2>
+            <h3 className="text-xs sm:text-xl font-semibold text-gray-300 drop-shadow-md">
+              Rehearsal Room | Music Session | Multifloor Session
+            </h3>
+          </div>
         </div>
 
-        {/* Search Card */}
-        <Card className="absolute left-1/2 bottom-[-10%] transform -translate-x-1/2 w-11/12 max-w-lg bg-white shadow-lg rounded-lg">
-          <CardContent className="p-4 sm:p-6">
-            <div className="flex flex-wrap gap-3">
-              {/* Inputs */}
-              <Input
-                type="text"
-                placeholder="Location"
-                className="w-full sm:w-1/2 rounded-md border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-              />
-              <Input
-                type="text"
-                placeholder="Add Radius"
-                className="hidden sm:block w-full sm:w-1/2 rounded-md border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-              />
-              <Input
-                type="date"
-                className="w-full sm:w-1/2 rounded-md border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-              />
-              <Input
-                type="number"
-                placeholder="Hours"
-                className="hidden sm:block w-full sm:w-1/2 rounded-md border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-              />
+        {/* Card */}
+        <Card className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full w-10/12 sm:w-4/5 lg:w-4/5 ">
+          <CardContent className=" px-6 py-2 sm:py-4">
+            <div className="flex sm:flex-wrap items-center gap-4 sm:gap-6">
+              {/* Location Input */}
+              <div className="w-full sm:flex-1">
+                <Input
+                  type="text"
+                  placeholder="Location"
+                  className="w-full  border-none rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                />
+                <div className="text-xs text-muted-foreground   text-left ml-2">
+                  Where
+                </div>
+              </div>
+
+              {/* Radius Input */}
+              <div className="w-full sm:flex-1 hidden sm:block">
+                <Input
+                  type="text"
+                  placeholder="Add Radius"
+                  className=" border-r-2 border-none w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                />
+                <div className="text-xs text-muted-foreground  text-center sm:text-left ml-2">
+                  Radius
+                </div>
+              </div>
+
+              {/* Date Input */}
+              <div className="w-full sm:flex-1 hidden sm:block">
+                <Input
+                  type="date"
+                  placeholder="Add date"
+                  className="w-full border-none rounded-md text-gray-500 border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                />
+                <div className="text-xs text-muted-foreground text-center sm:text-left ml-2">
+                  Date
+                </div>
+              </div>
+
+              {/* Hours Input */}
+              <div className="w-full sm:flex-1 hidden sm:block">
+                <Input
+                  type="number"
+                  placeholder="Number of hours"
+                  className="w-full border-none rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                />
+                <div className="text-xs text-muted-foreground text-center sm:text-left ml-2">
+                  Hours
+                </div>
+              </div>
+
               {/* Search Button */}
-              <Button
-                size="icon"
-                className="h-10 w-10 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-md"
-              >
-                <Search className="h-5 w-5" />
-              </Button>
+              <div>
+                <Button
+                  size="icon"
+                  className="h-10 w-10 bg-blue-500 hover:bg-blue-600 text-white shadow-md rounded-full flex items-center justify-center"
+                >
+                  <Search className="h-5 w-5" />
+                </Button>
+
+                <div className="text-xs text-muted-foreground mt-1 text-center sm:text-left ml-2"></div>
+              </div>
             </div>
           </CardContent>
         </Card>
       </div>
 
-      {/* Recent Section */}
-      <div className="mt-16 sm:mt-20">
-        <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">
-          Recent
-        </h2>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* ///section2  */}
+
+      <div className="mx-auto mt-6 px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Recent</h2>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
           {data.map((room, index) => (
             <Card
               key={index}
-              className="w-full mx-auto overflow-hidden group shadow-md rounded-lg hover:shadow-lg transition-shadow"
+              className="w-full max-w-md mx-auto overflow-hidden group cursor-pointer shadow-md rounded-lg hover:shadow-lg transition-shadow"
             >
               <CardContent className="p-0">
-                {/* Image */}
-                <div className="relative aspect-video overflow-hidden">
+                {/* Image Section */}
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={hero}
                     alt={room.imageAlt}
@@ -131,23 +173,47 @@ export default function Home() {
                     className="object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
-                {/* Content */}
+
+                {/* Content Section */}
                 <div className="p-4">
-                  <div className="flex justify-between items-start">
+                  {/* Title and Location */}
+                  <div className="flex items-start justify-between">
                     <div>
-                      <h3 className="font-semibold text-lg">{room.title}</h3>
+                      <h3 className="font-semibold text-lg text-gray-900">
+                        {room.title}
+                      </h3>
                       <p className="text-sm text-gray-500">{room.location}</p>
                     </div>
-                    <div className="flex items-center text-blue-500">
-                      <Music className="h-4 w-4" />
-                      <span className="text-sm ml-1">{room.rating}</span>
+                    {/* Rating */}
+                    <div className="flex items-center gap-1 text-blue-500">
+                      <Music className="w-4 h-4" strokeWidth={3} />
+                      <span className="text-sm font-medium">{room.rating}</span>
                     </div>
                   </div>
-                  <div className="mt-2 text-sm font-medium text-gray-700">
-                    from{" "}
-                    <span className="font-bold text-gray-900">
-                      €{room.price}/h
-                    </span>
+
+                  {/* Price Section */}
+                  <div className="mt-3 flex flex-row-reverse items-center">
+                    <div>
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="w-5 h-5 text-gray-500 group-hover:text-blue-500 transition-colors"
+                      >
+                        <path d="m9 18 6-6-6-6" />
+                      </svg>
+                    </div>
+                    <div className="text-sm font-medium text-gray-700">
+                      from{" "}
+                      <span className="font-semibold text-gray-900">
+                        €{room.price}/h
+                      </span>
+                    </div>
                   </div>
                 </div>
               </CardContent>

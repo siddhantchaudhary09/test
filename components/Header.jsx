@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-md">
-      <div className="container mx-auto flex flex-wrap items-center justify-between py-4 px-4 sm:px-6">
+      <div className="container mx-auto flex  items-center justify-between py-4 px-4">
         {/* Logo */}
         <Link
           href="/"
@@ -62,24 +62,26 @@ const Header = () => {
         </div>
 
         {/* Navigation Links */}
-        <nav
-          className={`${
-            isMenuOpen ? "block" : "hidden"
-          } absolute top-full left-0 w-full bg-white shadow-md sm:shadow-none sm:static sm:flex items-center space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-8`}
-        >
-          <Link
-            href="/search-room"
-            className="block text-black text-sm sm:text-lg font-medium hover:underline hover:text-gray-600 transition duration-300 px-4 py-2 sm:p-0"
+        <div>
+          <nav
+            className={`${
+              isMenuOpen ? "block" : "hidden"
+            } absolute top-full left-0 w-full bg-white shadow-md sm:shadow-none sm:static sm:flex items-center space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-8`}
           >
-            Search Room
-          </Link>
-          <Link
-            href="/book-event"
-            className="block text-black text-sm sm:text-lg font-medium hover:underline hover:text-gray-600 transition duration-300 px-4 py-2 sm:p-0"
-          >
-            Book Event
-          </Link>
-        </nav>
+            <Link
+              href="/search-room"
+              className="block text-black text-sm sm:text-lg font-medium hover:underline hover:text-gray-600 transition duration-300 px-4 py-2 sm:p-0"
+            >
+              Search Room
+            </Link>
+            <Link
+              href="/book-event"
+              className="block text-black text-sm sm:text-lg font-medium hover:underline hover:text-gray-600 transition duration-300 px-4 py-2 sm:p-0"
+            >
+              Book Event
+            </Link>
+          </nav>
+        </div>
 
         {/* Actions */}
         <div className="flex items-center space-x-4 sm:space-x-6">
