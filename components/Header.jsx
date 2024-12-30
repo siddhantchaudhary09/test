@@ -5,9 +5,12 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header className="bg-white shadow-md">
-      <div className="container mx-auto flex items-center justify-between py-4 px-2 sm:px-0">
+      <div className="container mx-auto flex items-center justify-between py-3 sm:px-0">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold text-black hover:underline">
+        <Link
+          href="/"
+          className="text-lg sm:text-3xl font-bold text-black hover:underline"
+        >
           Music Room.
         </Link>
 
@@ -26,7 +29,7 @@ const Header = () => {
               variant="outline"
               className="flex items-center space-x-2 p-2 text-black hover:bg-gray-100"
             >
-              <span className="font-medium">Host a Room</span>
+              <span className="font-semibold text-lg">Host a Room</span>
             </Button>
           </Link>
           <CircleUser className="h-12 w-12" />
