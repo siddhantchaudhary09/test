@@ -56,81 +56,74 @@ export default function Home() {
       imageAlt: "Contemporary room with clean lines and subtle decoration",
     },
   ];
+
   return (
-    <div className="py-4 mx-auto container">
-      <div className="mx-auto relative h-80">
-        <div className="px-8 mx-auto relative h-64">
-          {" "}
-          <Image
-            src={hero}
-            alt="hero"
-            className="w-full h-64 rounded-lg mx-2"
-          />
+    <div className="py-4 mx-auto container px-4">
+      <div className="relative h-80 bg-gray-50">
+        {/* Hero Image */}
+        <div className="h-64 w-full overflow-hidden rounded-lg shadow-md">
+          <Image src={hero} alt="hero" className="w-full h-full object-cover" />
+        </div>
+        {/* Hero Text */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-40 text-center text-white p-4">
+          <h2 className="text-2xl sm:text-4xl font-extrabold mb-2 drop-shadow-lg">
+            Search for a Room
+          </h2>
+          <h3 className="text-sm sm:text-lg font-semibold drop-shadow-md">
+            Rehearsal Room | Music Session | Multifloor Session
+          </h3>
         </div>
 
-        <Card className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-          <CardContent className="p-3">
-            <div className="flex flex-row items-center gap-3">
-              <div className="w-full sm:flex-1">
-                <Input type="text" placeholder="Location" className="w-full" />
-                <div className="text-xs text-muted-foreground mt-1 text-center sm:text-left">
-                  Where
-                </div>
-              </div>
-
-              <div className="w-full sm:flex-1 hidden sm:block">
-                <Input
-                  type="text"
-                  placeholder="Add Radius"
-                  className="w-full"
-                />
-                <div className="text-xs text-muted-foreground mt-1 text-center sm:text-left">
-                  Radius
-                </div>
-              </div>
-
-              <div className="w-full sm:flex-1 hidden sm:block">
-                <Input type="date" placeholder="Add date" className="w-full" />
-                <div className="text-xs text-muted-foreground mt-1 text-center sm:text-left">
-                  Date
-                </div>
-              </div>
-
-              <div className="w-full sm:flex-1 hidden sm:block">
-                <Input
-                  type="number"
-                  placeholder="Number of hours"
-                  className="w-full"
-                />
-                <div className="text-xs text-muted-foreground mt-1 text-center sm:text-left">
-                  Hours
-                </div>
-              </div>
-              <div>
-                <Button
-                  size="icon"
-                  className="h-10 w-10 bg-blue-500 hover:bg-blue-600 sm:ml-3 mt-2 sm:mt-0"
-                >
-                  <Search className="h-4 w-4" />
-                </Button>
-              </div>
+        {/* Search Card */}
+        <Card className="absolute left-1/2 bottom-[-10%] transform -translate-x-1/2 w-11/12 max-w-lg bg-white shadow-lg rounded-lg">
+          <CardContent className="p-4 sm:p-6">
+            <div className="flex flex-wrap gap-3">
+              {/* Inputs */}
+              <Input
+                type="text"
+                placeholder="Location"
+                className="w-full sm:w-1/2 rounded-md border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+              />
+              <Input
+                type="text"
+                placeholder="Add Radius"
+                className="hidden sm:block w-full sm:w-1/2 rounded-md border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+              />
+              <Input
+                type="date"
+                className="w-full sm:w-1/2 rounded-md border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+              />
+              <Input
+                type="number"
+                placeholder="Hours"
+                className="hidden sm:block w-full sm:w-1/2 rounded-md border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+              />
+              {/* Search Button */}
+              <Button
+                size="icon"
+                className="h-10 w-10 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-md"
+              >
+                <Search className="h-5 w-5" />
+              </Button>
             </div>
           </CardContent>
         </Card>
       </div>
 
-      {/* ///section2  */}
-
-      <div className="mx-auto mt-6 px-2">
-        <h2 className="text-lg ">Recent</h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mx-auto px-6 mt-4">
+      {/* Recent Section */}
+      <div className="mt-16 sm:mt-20">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">
+          Recent
+        </h2>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {data.map((room, index) => (
             <Card
               key={index}
-              className="w-full max-w-[350px] overflow-hidden group cursor-pointer"
+              className="w-full mx-auto overflow-hidden group shadow-md rounded-lg hover:shadow-lg transition-shadow"
             >
               <CardContent className="p-0">
-                <div className="relative aspect-[4/3] overflow-hidden">
+                {/* Image */}
+                <div className="relative aspect-video overflow-hidden">
                   <Image
                     src={hero}
                     alt={room.imageAlt}
@@ -138,37 +131,23 @@ export default function Home() {
                     className="object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
+                {/* Content */}
                 <div className="p-4">
-                  <div className="flex items-start justify-between">
+                  <div className="flex justify-between items-start">
                     <div>
                       <h3 className="font-semibold text-lg">{room.title}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {room.location}
-                      </p>
+                      <p className="text-sm text-gray-500">{room.location}</p>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Music className="w-4 h-4 " strokeWidth={3} />
-                      <span className="text-sm">{room.rating}</span>
+                    <div className="flex items-center text-blue-500">
+                      <Music className="h-4 w-4" />
+                      <span className="text-sm ml-1">{room.rating}</span>
                     </div>
                   </div>
-                  <div className="mt-2 flex items-center flex-row-reverse">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="w-5 h-5"
-                    >
-                      <path d="m9 18 6-6-6-6" />
-                    </svg>
-                    <div className="text-sm font-semibold">
-                      from{" "}
-                      <span className="font-semibold">€{room.price}/h</span>
-                    </div>
+                  <div className="mt-2 text-sm font-medium text-gray-700">
+                    from{" "}
+                    <span className="font-bold text-gray-900">
+                      €{room.price}/h
+                    </span>
                   </div>
                 </div>
               </CardContent>
