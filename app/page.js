@@ -1,8 +1,7 @@
-import { Button } from "@/components/ui/button";
+import SearchBar from "@/components/SearchBar";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import hero from "@/public/hero.jpg";
-import { Music, Search } from "lucide-react";
+import { Music } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -58,7 +57,7 @@ export default function Home() {
   ];
   return (
     <div className="py-4 mx-auto container mt-8">
-      <div className="mx-auto relative h-80 bg-gray-50">
+      <div className="mx-auto relative h-80 bg-white">
         {/* Hero Image */}
         <div className="px-8 mx-auto relative h-64">
           <Image
@@ -67,87 +66,24 @@ export default function Home() {
             className="w-full h-64 rounded-lg object-cover shadow-md"
           />
         </div>
-        <div className="absolute top-1/3 sm:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+        <div className="absolute top-1/2 mb-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
           {/* Background Overlay for Text */}
-          <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg w-full"></div>
 
           {/* Text */}
           <div className="relative z-10">
-            <h2 className="text-md sm:text-5xl font-extrabold sm:mb-3 drop-shadow-lg">
+            <h2 className="text-xl sm:text-5xl font-bold sm:mb-3 drop-shadow-lg">
               Search for a Room
             </h2>
-            <h3 className="text-xs sm:text-xl font-semibold text-gray-300 drop-shadow-md">
+            <h3 className="text-xs sm:text-xl  text-gray-300 drop-shadow-md">
               Rehearsal Room | Music Session | Multifloor Session
             </h3>
           </div>
         </div>
 
         {/* Card */}
-        <Card className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full w-10/12 sm:w-4/5 lg:w-4/5 ">
-          <CardContent className=" px-6 py-2 sm:py-4">
-            <div className="flex sm:flex-wrap items-center gap-4 sm:gap-6">
-              {/* Location Input */}
-              <div className="w-full sm:flex-1">
-                <Input
-                  type="text"
-                  placeholder="Location"
-                  className="w-full  border-none rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-                <div className="text-xs text-muted-foreground   text-left ml-2">
-                  Where
-                </div>
-              </div>
-
-              {/* Radius Input */}
-              <div className="w-full sm:flex-1 hidden sm:block">
-                <Input
-                  type="text"
-                  placeholder="Add Radius"
-                  className=" border-r-2 border-none w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-                <div className="text-xs text-muted-foreground  text-center sm:text-left ml-2">
-                  Radius
-                </div>
-              </div>
-
-              {/* Date Input */}
-              <div className="w-full sm:flex-1 hidden sm:block">
-                <Input
-                  type="date"
-                  placeholder="Add date"
-                  className="w-full border-none rounded-md text-gray-500 border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-                <div className="text-xs text-muted-foreground text-center sm:text-left ml-2">
-                  Date
-                </div>
-              </div>
-
-              {/* Hours Input */}
-              <div className="w-full sm:flex-1 hidden sm:block">
-                <Input
-                  type="number"
-                  placeholder="Number of hours"
-                  className="w-full border-none rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                />
-                <div className="text-xs text-muted-foreground text-center sm:text-left ml-2">
-                  Hours
-                </div>
-              </div>
-
-              {/* Search Button */}
-              <div>
-                <Button
-                  size="icon"
-                  className="h-10 w-10 bg-blue-500 hover:bg-blue-600 text-white shadow-md rounded-full flex items-center justify-center"
-                >
-                  <Search className="h-5 w-5" />
-                </Button>
-
-                <div className="text-xs text-muted-foreground mt-1 text-center sm:text-left ml-2"></div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full w-10/12 sm:w-4/5 lg:w-4/5 "></div>
+        <SearchBar />
       </div>
 
       {/* ///section2  */}
