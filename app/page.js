@@ -57,7 +57,7 @@ export default function Home() {
     },
   ];
   return (
-    <div className="py-4 mx-auto container">
+    <div className="py-4 mx-auto container mt-8">
       <div className="mx-auto relative h-80 bg-gray-50">
         {/* Hero Image */}
         <div className="px-8 mx-auto relative h-64">
@@ -161,7 +161,7 @@ export default function Home() {
           {data.map((room, index) => (
             <Card
               key={index}
-              className="w-full max-w-md mx-auto overflow-hidden group cursor-pointer shadow-md rounded-lg hover:shadow-lg transition-shadow"
+              className="w-full max-w-md mx-auto overflow-hidden group cursor-pointer drop-shadow-sm rounded-lg hover:shadow-lg transition-shadow"
             >
               <CardContent className="p-0">
                 {/* Image Section */}
