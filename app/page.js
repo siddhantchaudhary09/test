@@ -1,5 +1,12 @@
 import SearchBar from "@/components/SearchBar";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import hero from "@/public/hero.jpg";
 import { Music } from "lucide-react";
 import Image from "next/image";
@@ -68,7 +75,6 @@ export default function Home() {
         </div>
         <div className="absolute top-1/2 mb-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
           {/* Background Overlay for Text */}
-          <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg w-full"></div>
 
           {/* Text */}
           <div className="relative z-10">
@@ -89,8 +95,21 @@ export default function Home() {
       {/* ///section2  */}
 
       <div className="mx-auto mt-6 px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Recent</h2>
+        <div className="flex justify-between items-center mb-6">
+          {" "}
+          {/* Heading */}
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Recent</h2>
+          <Select>
+            <SelectTrigger className="w-[150px]">
+              <SelectValue placeholder="Radius" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="light">Radius</SelectItem>
+              <SelectItem value="dark">Dark</SelectItem>
+              <SelectItem value="system">System</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mx-auto">

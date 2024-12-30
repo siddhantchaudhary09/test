@@ -20,7 +20,7 @@ const SearchBar = () => {
     <div className="absolute  left-1/2 transform -translate-x-1/2 -translate-y-1/2  w-[85%] sm:w-[90%] lg:w-4/5 max-w-6xl z-50">
       <div className="flex  md:flex-row items-stretch gap-2 p-3 bg-white rounded-3xl shadow-lg">
         {/* Where */}
-        <div className="w-full md:w-1/3 px-4 py-2 md:py-0 hover:bg-gray-50 rounded-2xl transition-colors">
+        <div className="w-full md:border-r md:w-1/3 px-4 py-2 md:py-0 hover:bg-gray-50 transition-colors">
           <Label htmlFor="where" className="text-sm font-medium text-gray-600">
             Where
           </Label>
@@ -32,16 +32,16 @@ const SearchBar = () => {
         </div>
 
         {/* Radius */}
-        <div className="w-full md:w-1/4 px-4 py-2 md:py-0 md:border-l border-gray-200 hover:bg-gray-50 rounded-2xl transition-colors hidden sm:block">
+        <div className="w-full md:w-1/4 px-4 py-2 md:py-0 md:border-r border-gray-200 hover:bg-gray-50  transition-colors hidden sm:block">
           <Label className="text-sm font-medium text-gray-600">Radius</Label>
           <Input
             placeholder="Add Radius"
-            className="border-0 p-0 focus-visible:ring-0 placeholder:text-muted-foreground/60 bg-transparent"
+            className="border-0  p-0 focus-visible:ring-0 placeholder:text-muted-foreground/60 bg-transparent"
           />
         </div>
 
         {/* Date */}
-        <div className="w-full md:w-1/4 px-4 py-2 md:py-0 md:border-l border-gray-200 hover:bg-gray-50 rounded-2xl transition-colors hidden sm:block">
+        <div className="w-full md:w-1/4 px-4 py-2 md:py-0 md:border-r border-gray-200 hover:bg-gray-50  transition-colors hidden sm:block">
           <Label className="text-sm font-medium text-gray-600">Date</Label>
           <Popover>
             <PopoverTrigger asChild>
@@ -64,7 +64,7 @@ const SearchBar = () => {
         </div>
 
         {/* Hours */}
-        <div className="w-full md:w-1/4 px-4 py-2 md:py-0 md:border-l border-gray-200 hover:bg-gray-50 rounded-2xl transition-colors hidden sm:block">
+        <div className="w-full md:w-1/4 px-4 py-2 md:py-0 md:border-r border-gray-200 hover:bg-gray-50  transition-colors hidden sm:block">
           <Label className="text-sm font-medium text-gray-600">Hours</Label>
           <Input
             placeholder="No of hours"
