@@ -27,7 +27,7 @@ const SearchBar = () => {
           <Input
             id="where"
             placeholder="Search destinations"
-            className="border-none shadow-none focus:ring-0 focus-visible:ring-0 placeholder:text-muted-foreground/60 bg-transparent"
+            className="border-none shadow-none focus:ring-0 justify-start p-0 focus-visible:ring-0 placeholder:text-muted-foreground/60 bg-transparent"
           />
         </div>
 
@@ -36,7 +36,7 @@ const SearchBar = () => {
           <Label className="text-sm font-medium text-gray-600">Radius</Label>
           <Input
             placeholder="Add Radius"
-            className="border-none shadow-none focus:ring-0  p-0 focus-visible:ring-0 placeholder:text-muted-foreground/60 bg-transparent"
+            className="border-none shadow-none focus:ring-0 justify-start p-0 focus-visible:ring-0 placeholder:text-muted-foreground/60 bg-transparent"
           />
         </div>
 
@@ -68,7 +68,7 @@ const SearchBar = () => {
           <Label className="text-sm font-medium text-gray-600">Hours</Label>
           <Input
             placeholder="No of hours"
-            className="border-none shadow-none focus:ring-0   focus-visible:ring-0 placeholder:text-muted-foreground/60 bg-transparent"
+            className="border-none shadow-none focus:ring-0 justify-start p-0 focus-visible:ring-0 placeholder:text-muted-foreground/60 bg-transparent"
           />
         </div>
 
@@ -76,7 +76,7 @@ const SearchBar = () => {
         <div className="px-2 py-2 md:py-0 flex items-center justify-center">
           <Button
             size="icon"
-            className="rounded-full  h-12 w-12 transition-colors"
+            className="rounded-f  h-12 w-12 transition-colors"
           >
             <Search className="h-5 w-5" />
             <span className="sr-only">Search</span>
